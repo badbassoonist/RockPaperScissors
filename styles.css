@@ -94,7 +94,7 @@ img {
 
 #status:hover {
   cursor: pointer;
-  background-color: #f1e4e8f8;
+  background-color: #fff;
   transform: scale(1.02);
   transition: 0.1s;
 }
