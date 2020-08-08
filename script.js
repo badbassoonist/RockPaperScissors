@@ -1,6 +1,6 @@
 let playerScore = 0;
 let compScore = 0;
-let rounds = 1;
+let rounds = 0;
 let currentlyPlaying = true;
 let result;
 
@@ -57,7 +57,8 @@ function computerPlay() {
 function playRound(playerSelection) {
   let computerSelection = computerPlay();
   rounds++;
-  round.textContent = `Round ${rounds}/5`;
+  // To avoid having "Round 6/5" display or game ending a round early:
+  rounds < 5 ? round.textContent = `Round ${rounds + 1}/5` : round.textContent = `Round ${rounds}/5`;
 
   // Draw
   if (playerSelection === computerSelection) {
@@ -80,13 +81,17 @@ function playRound(playerSelection) {
   if (playerScore > compScore) {
     gameStatus.textContent = `I chose ${computerSelection}. You're ahead! For now...`;
   } else if (playerScore < compScore) {
-    gameStatus.textContent = `I chose ${computerSelection}. Get on my level!`;
+    gameStatus.textContent = `I chose ${computerSelection}. Better catch up!`;
   } else if (playerScore === compScore) {
     gameStatus.textContent = `I chose ${computerSelection}. It seems I am only as worthy as you, human.`;
   }
   if (rounds === 5) {
-      playerScore > 2 ? result = 'You win' : result = 'You lose';
-      return gameStatus.innerHTML = `I chose ${computerSelection}. ${result}! <strong style="font-size: 1.3rem">Play again?</strong>`;
+      if (playerScore > compScore) result = 'You win';
+      else if (compScore > playerScore) result = 'You lose';
+      else result = 'It\'s a draw';
+      round.textContent = 'GAME OVER';
+      gameStatus.style.backgroundColor = '#ddd';
+      gameStatus.innerHTML = `I chose ${computerSelection}. ${result}! <br><strong style="calc(font-size: 1.3rem + 0.6vw)">Play again?</strong>`;
   }
   return gameStatus;
 }
@@ -97,11 +102,11 @@ function reset() {
   if (rounds === 5) {
     return playerScore = 0,
     compScore = 0,
-    rounds = 1,
+    rounds = 0,
     scoreboard.textContent = `${playerScore} : ${compScore}`,
-    round.textContent = `Round ${rounds}/5`,
+    round.textContent = `Round ${rounds + 1}/5`,
     gameStatus.textContent = 'Good luck!',
-    gameStatus.style.hover = 
+    gameStatus.style.backgroundColor = '#fff',
     currentlyPlaying = true;
   } else {
     return gameStatus.textContent = 'Finish the game, silly!';

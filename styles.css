@@ -7,8 +7,8 @@ html {
   text-align: center;
   box-sizing: border-box;
   font-size: 16px;
-  background-color: #140f2d;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   font-family: 'Recursive', sans-serif;
 }
 
@@ -20,8 +20,8 @@ h1 {
 .score {
   display: block;
   margin: 10vh auto 0 auto;
-  background-color: #fff;
-  color: #140f2d;
+  background-color: #ddd;
+  /*#140f2d*/
   width: 150px;
   height: 150px;
   border-radius: 5%;
@@ -56,6 +56,7 @@ h2 {
   cursor: pointer;
   max-width: 200px;
   max-height: 200px;
+  box-shadow: 8px 10px 40px 3px #aaa;
 }
 
 .button:hover {
@@ -84,12 +85,11 @@ img {
 #status {
   margin: 10vh auto 0 auto;
   background-color: #fff;
-  color: #140f2d;
-  padding: 20px 0;
+  padding: 20px 5px;
   width: 50%;
   border-radius: 5px;
   max-width: 500px;
-  font-size: 1.2rem;
+  font-size: calc(1.1rem + 0.5vw);
 }
 
 #status:hover {
@@ -97,6 +97,18 @@ img {
   background-color: #fff;
   transform: scale(1.02);
   transition: 0.1s;
+}
+
+footer {
+  position: absolute;
+  bottom: 0.6vh;
+  right: 2vw;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+a {
+  color: #000;
 }
 
 @media screen and (max-width: 555px) {
@@ -109,17 +121,22 @@ img {
   }
   .button {
     width: 30%;
+    box-shadow: 4px 6px 12px #aaa;
   }
 
   #status {
     margin: 6vh auto 0 auto;
     width: 90%;
   }
+
+  footer {
+    font-size: 0.6rem;
+  }
 }
 
 @media screen and (max-height: 600px) {
   .score {
-    margin-top: 6vh;
+    margin-top: 4vh;
   }
 }
 
@@ -131,9 +148,9 @@ img {
 
 @media screen and (min-height: 800px) {
   .score {
-    margin-top: 20vh;
+    margin-top: 15vh;
   }
   #container {
-    margin-top: 20vh;
+    margin-top: 18vh;
   }
 }
