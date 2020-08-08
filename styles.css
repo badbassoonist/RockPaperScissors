@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive&display=swap');
+
+html {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: #140f2d;
+  color: #fff;
+  font-family: 'Recursive', sans-serif;
+}
+
+h1 {
+  margin-top: 4vh;
+  font-size: 2.2rem;
+}
+
+.score {
+  display: block;
+  margin: 10vh auto 0 auto;
+  background-color: #fff;
+  color: #140f2d;
+  width: 150px;
+  height: 150px;
+  border-radius: 5%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding-top: 5%;
+}
+
+#scoreboard {
+  font-size: 3rem;
+  margin: -1vh auto 0 auto;
+}
+
+#round {
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+#container {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+  margin: 6vh auto 0 auto;
+  max-width: 800px;
+}
+
+.button {
+  width: 20%;
+  border-radius: 5%;
+  cursor: pointer;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  transition: 0.07s;
+}
+
+#rock {
+  background-color: #3f88c5;
+}
+
+#paper {
+  background-color: #f49d37;
+}
+
+#scissors {
+  background-color: #f22b29;
+}
+
+img {
+  padding: 25%;
+  width: 50%;
+  height: auto;
+}
+
+#status {
+  margin: 10vh auto 0 auto;
+  background-color: #fff;
+  color: #140f2d;
+  padding: 20px 0;
+  width: 50%;
+  border-radius: 5px;
+  max-width: 500px;
+  font-size: 1.2rem;
+}
+
+#status:hover {
+  cursor: pointer;
+  background-color: #f1e4e8f8;
+  transform: scale(1.02);
+  transition: 0.1s;
+}
+
+@media screen and (max-width: 555px) {
+  .score {
+    margin-top: 7vh;
+  }
+
+  #container {
+    margin-top: 8vh;
+  }
+  .button {
+    width: 30%;
+  }
+
+  #status {
+    margin: 6vh auto 0 auto;
+    width: 90%;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .score {
+    margin-top: 6vh;
+  }
+}
+
+@media screen and (min-height: 700px) {
+  #container {
+    margin-top: 15vh;
+  }
+}
+
+@media screen and (min-height: 800px) {
+  .score {
+    margin-top: 20vh;
+  }
+  #container {
+    margin-top: 20vh;
+  }
+}
